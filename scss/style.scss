@@ -1,0 +1,215 @@
+$container_width: 980px !important;
+@font-face {
+	font-display: block;
+	font-family: "headerfont";
+	src: url("https://static.wixstatic.com/ufonts/643d94_dd28b3957391427eb54de1c9eff7cfb1/woff2/file.woff2")
+			format("woff2"),
+		url("https://static.wixstatic.com/ufonts/643d94_dd28b3957391427eb54de1c9eff7cfb1/woff/file.woff")
+			format("woff"),
+		url("https://static.wixstatic.com/ufonts/643d94_dd28b3957391427eb54de1c9eff7cfb1/ttf/file.ttf")
+			format("ttf");
+}
+@font-face {
+	font-display: block;
+	font-family: "imagefont";
+	src: url("https://static.wixstatic.com/ufonts/643d94_f52303b2efea42e1b4aeed119e42672e/woff2/file.woff2")
+			format("woff2"),
+		url("https://static.wixstatic.com/ufonts/643d94_f52303b2efea42e1b4aeed119e42672e/woff/file.woff")
+			format("woff"),
+		url("https://static.wixstatic.com/ufonts/643d94_f52303b2efea42e1b4aeed119e42672e/ttf/file.ttf")
+			format("ttf");
+}
+$main_color: #2b2b2b;
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+html,
+body {
+	min-height: 100%;
+}
+body {
+	background-color: $main_color;
+	margin: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+
+.container {
+	width: $container_width;
+	margin: auto;
+}
+header {
+	top: 0;
+	bottom: 0;
+	left: 0;
+	position: sticky;
+	background-color: #1a1e1f;
+	padding: 22px 0;
+	opacity: 0.96;
+	z-index: 999;
+}
+
+ul {
+	list-style: none;
+}
+
+.nav {
+	width: 100%;
+
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	> .nav-header {
+		display: inline;
+	}
+	ul li {
+		width: 113px;
+		text-align: center;
+		position: relative;
+		box-sizing: border-box;
+		overflow: visible;
+		visibility: inherit;
+		display: inline-block;
+		background: transparent;
+
+		vertical-align: baseline;
+		.active {
+			color: rgb(0, 163, 224) !important;
+		}
+	}
+
+	ul li a {
+		text-decoration: none;
+		color: white;
+		font-family: "headerfont";
+		font-size: 14px;
+	}
+	> .nav-header > .nav-title {
+		display: inline-block;
+		font-size: 22px;
+		color: #fff;
+	}
+	> .nav-btn {
+		display: none;
+	}
+	> #nav-check {
+		display: none;
+	}
+	.nav-links {
+		display: flex;
+		align-items: center;
+	}
+	.nav-links ul {
+		overflow: visible;
+		white-space: nowrap;
+		width: calc(100% - (var(--menuTotalBordersX, 0px)));
+
+		list-style: none;
+		background: transparent;
+
+		vertical-align: baseline;
+	}
+}
+
+.photocover {
+	position: relative;
+	img {
+		object-fit: cover;
+		object-position: 50% 50%;
+		width: 100%;
+	}
+	.img_title {
+		position: absolute;
+		margin: 96px 0px 10px calc((100% - 980px) * 0.5);
+		top: 0;
+		p {
+			font-family: "imagefont";
+			font-size: 34px;
+		}
+	}
+}
+
+.wrapper {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10px;
+	grid-auto-rows: minmax(100px, auto);
+}
+
+.course {
+	border: 1px solid rgba(85, 85, 85, 1);
+	border-radius: 6px 6px 6px 6px;
+	width: 300px;
+	h5 {
+		color: #f4f4f4;
+		font-size: 18px;
+		margin: 35px 0 25px 22px;
+	}
+	p {
+		font-size: 14px;
+		color: rgb(244, 244, 244);
+		margin-left: 22px;
+	}
+	a {
+		margin: 28% 0px 21px 22px;
+		color: #01a7e6;
+		font-size: 18px;
+		display: block;
+	}
+}
+
+@media (max-width: 800px) {
+	.nav {
+		> .nav-btn {
+			display: inline-block;
+			position: absolute;
+			right: 0px;
+			top: 0px;
+		}
+		> .nav-btn > label {
+			display: inline-block;
+			width: 50px;
+			height: 50px;
+			padding: 13px;
+
+			&:hover {
+				background-color: rgba(0, 0, 0, 0.3);
+			}
+			> span {
+				display: block;
+				width: 25px;
+				height: 10px;
+				border-top: 2px solid #eee;
+			}
+		}
+		> #nav-check:checked ~ .nav-btn > label {
+			background-color: rgba(0, 0, 0, 0.3);
+		}
+
+		> .nav-links {
+			position: absolute;
+			display: block;
+			width: 100%;
+			background-color: #333;
+			height: 0px;
+			transition: all 0.3s ease-in;
+			overflow-y: hidden;
+			top: 50px;
+			left: 0px;
+			> a {
+				display: block;
+				width: 100%;
+			}
+		}
+
+		> #nav-check:not(:checked) ~ .nav-links {
+			height: 0px;
+		}
+		> #nav-check:checked ~ .nav-links {
+			height: calc(100vh - 50px);
+			overflow-y: auto;
+		}
+	}
+}

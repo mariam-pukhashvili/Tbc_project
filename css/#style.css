@@ -1,0 +1,92 @@
+* {
+	box-sizing: border-box;
+}
+html,
+body {
+	font-family: "Roboto", sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	position: fixed !important;
+	background: #1a1e1f;
+	top: 0;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+.header-div {
+	display: flex;
+}
+.main_logo_div {
+	--opacity: 1;
+	width: 182px;
+	height: 40px;
+	position: relative;
+	margin: 22px 0px 22px calc((100% - 980px) * 0.5);
+	left: 0px;
+	grid-area: 1 / 1 / 2 / 2;
+	justify-self: start;
+	align-self: start;
+	vertical-align: baseline;
+}
+.main_nav {
+	visibility: inherit;
+	overflow-x: visible;
+	width: 454px;
+	height: 26px;
+	position: relative;
+	margin: 29px 0px 29px calc((100% - 980px) * 0.5);
+	left: 526px;
+	grid-area: 1 / 1 / 2 / 2;
+	justify-self: start;
+	align-self: start;
+}
+.main_nav nav {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+}
+
+.main_nav > nav {
+	position: absolute;
+
+	bottom: 0;
+	left: 0;
+	right: 0;
+	top: 0;
+}
+.main_nav nav ul {
+	height: calc(100% - (var(--menuTotalBordersY, 0px)));
+	overflow: visible;
+	white-space: nowrap;
+	width: calc(100% - (var(--menuTotalBordersX, 0px)));
+	position: absolute;
+	list-style: none;
+	background: transparent;
+	border: 0;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+.main_nav nav ul li {
+	width: 113px;
+	height: 26px;
+	position: relative;
+	box-sizing: border-box;
+	overflow: visible;
+	visibility: inherit;
+	display: inline-block;
+	background: transparent;
+	border: 0;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
