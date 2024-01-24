@@ -212,25 +212,42 @@ ul {
 		gap: 10px;
 		grid-auto-rows: minmax(100px, auto);
 		.course {
-			border: 1px solid rgba(85, 85, 85, 1);
+			border: 1px solid #555555;
 			border-radius: 6px 6px 6px 6px;
 			width: 300px;
 			margin-bottom: 25px;
+			position: relative;
+			img {
+				width: 100%;
+			}
+			// display: flex;
+			// flex-direction: column;
+			// justify-content: space-between;
+			// height: 414px;
 			h5 {
 				color: #f4f4f4;
 				font-size: 18px;
-				margin: 35px 0 25px 22px;
+				font-family: "headerfont";
+				margin: 35px 0 25px 0;
 			}
 			p {
 				font-size: 14px;
+				font-family: "headerfont";
 				color: rgb(244, 244, 244);
-				margin-left: 22px;
+			}
+			div {
+				padding: 0 22px;
+				height: 230px;
 			}
 			a {
-				margin: 28% 0px 21px 22px;
+				// margin: 28% 0px 21px 22px;
 				color: #01a7e6;
-				font-size: 18px;
+				font-size: 16px;
 				display: block;
+				position: absolute;
+				text-decoration: none;
+				bottom: 21px;
+				font-family: "headerfont";
 			}
 		}
 	}
