@@ -1,0 +1,297 @@
+@font-face {
+  font-display: block;
+  font-family: "headerfont";
+  src: url("https://static.wixstatic.com/ufonts/643d94_dd28b3957391427eb54de1c9eff7cfb1/woff2/file.woff2") format("woff2"), url("https://static.wixstatic.com/ufonts/643d94_dd28b3957391427eb54de1c9eff7cfb1/woff/file.woff") format("woff"), url("https://static.wixstatic.com/ufonts/643d94_dd28b3957391427eb54de1c9eff7cfb1/ttf/file.ttf") format("ttf");
+}
+
+@font-face {
+  font-display: block;
+  font-family: "imgfont";
+  src: url("https://static.wixstatic.com/ufonts/643d94_f52303b2efea42e1b4aeed119e42672e/woff2/file.woff2") format("woff2"), url("https://static.wixstatic.com/ufonts/643d94_f52303b2efea42e1b4aeed119e42672e/woff/file.woff") format("woff"), url("https://static.wixstatic.com/ufonts/643d94_f52303b2efea42e1b4aeed119e42672e/ttf/file.ttf") format("ttf");
+}
+
+@font-face {
+  font-display: block;
+  font-family: "infofont";
+  src: url("https://static.wixstatic.com/ufonts/643d94_dd28b3957391427eb54de1c9eff7cfb1/woff2/file.woff2") format("woff2"), url("https://static.wixstatic.com/ufonts/643d94_dd28b3957391427eb54de1c9eff7cfb1/woff/file.woff") format("woff"), url("https://static.wixstatic.com/ufonts/643d94_dd28b3957391427eb54de1c9eff7cfb1/ttf/file.ttf") format("ttf");
+}
+
+@font-face {
+  font-display: block;
+  font-family: "more";
+  src: url("https://static.wixstatic.com/ufonts/dd97f4_7737b5e7be24426aa35c9f4311c1de96/woff2/file.woff2") format("woff2"), url("https://static.wixstatic.com/ufonts/dd97f4_7737b5e7be24426aa35c9f4311c1de96/woff/file.woff") format("woff"), url("https://static.wixstatic.com/ufonts/dd97f4_7737b5e7be24426aa35c9f4311c1de96/ttf/file.ttf") format("ttf");
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background-color: #2b2b2b;
+  margin: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+}
+
+.container {
+  width: 980px !important;
+  margin: auto;
+}
+
+header {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  background-color: #1a1e1f;
+  padding: 22px 0;
+  opacity: 0.96;
+  z-index: 999;
+}
+
+ul {
+  list-style: none;
+}
+
+.nav {
+  width: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.nav > .nav-header {
+  display: inline;
+}
+
+.nav ul li {
+  width: 113px;
+  text-align: center;
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: visible;
+  visibility: inherit;
+  display: inline-block;
+  background: transparent;
+  vertical-align: baseline;
+}
+
+.nav ul li .active {
+  color: #00a3e0 !important;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-family: "headerfont";
+  font-size: 14px;
+}
+
+.nav > .nav-header > .nav-title {
+  display: inline-block;
+  font-size: 22px;
+  color: #fff;
+}
+
+.nav > .nav-btn {
+  display: none;
+}
+
+.nav > #nav-check {
+  display: none;
+}
+
+.nav .nav-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav .nav-links ul {
+  overflow: visible;
+  white-space: nowrap;
+  width: calc(100% - (var(--menuTotalBordersX, 0px)));
+  list-style: none;
+  background: transparent;
+  vertical-align: baseline;
+}
+
+.photocover {
+  position: relative;
+}
+
+.photocover img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 50%;
+     object-position: 50% 50%;
+  width: 100%;
+}
+
+.photocover .img_title {
+  position: absolute;
+  margin: 96px 0px 10px calc((100% - 980px) * 0.5);
+  top: 0;
+}
+
+.photocover .img_title h3 {
+  padding: 0;
+  margin: 0;
+  font-size: 42px;
+  color: white;
+  left: 0px;
+  font-family: "imgfont";
+}
+
+.photocover .img_title p {
+  font: normal normal normal 42px/1.6em "headerfont";
+  font-size: 34px;
+}
+
+.info {
+  top: 0;
+  margin-top: 0;
+  padding-top: 0px;
+}
+
+.info > div {
+  padding: 56px 0;
+}
+
+.info h1 {
+  font: normal normal normal 24px/1.6em "infofont";
+}
+
+.info h1 span {
+  text-align: left;
+  font-size: 28px;
+  line-height: 1.6em;
+  color: #f4f4f4;
+}
+
+.info a {
+  font-size: 20px;
+  line-height: 1.6em;
+  color: #0badef;
+  font: normal normal normal 20px/1.4em "more";
+  display: block;
+  margin-top: 43px;
+  cursor: pointer;
+}
+
+.courses {
+  background-color: #161616;
+  top: 0;
+  margin-top: 0;
+  padding-top: 0px;
+}
+
+.courses h4 {
+  font-size: 24px;
+  color: #f4f4f4;
+  padding: 34px 0px 67px calc((100% - 980px) * 0.5);
+  font: normal normal normal 24px/1.6em "infofont";
+}
+
+.courses .wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.courses .wrapper .course {
+  border: 1px solid #555555;
+  border-radius: 6px 6px 6px 6px;
+  width: 300px;
+  margin-bottom: 25px;
+}
+
+.courses .wrapper .course h5 {
+  color: #f4f4f4;
+  font-size: 18px;
+  margin: 35px 0 25px 22px;
+}
+
+.courses .wrapper .course p {
+  font-size: 14px;
+  color: #f4f4f4;
+  margin-left: 22px;
+}
+
+.courses .wrapper .course a {
+  margin: 28% 0px 21px 22px;
+  color: #01a7e6;
+  font-size: 18px;
+  display: block;
+}
+
+@media (max-width: 800px) {
+  .nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  .nav > .nav-btn > label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 13px;
+  }
+  .nav > .nav-btn > label:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .nav > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid #eee;
+  }
+  .nav > #nav-check:checked ~ .nav-btn > label {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .nav > .nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: #333;
+    height: 0px;
+    -webkit-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    left: 0px;
+  }
+  .nav > .nav-links > a {
+    display: block;
+    width: 100%;
+  }
+  .nav > #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+  .nav > #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+}
+/*# sourceMappingURL=style.css.map */
