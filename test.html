@@ -5,9 +5,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="shortcut icon" type="image/x-icon" href="./images/favicon.png" />
-		<link rel="stylesheet" href="./css/style.css" />
-
-		<style></style>
+		<link rel="stylesheet" href="./scss/style.css" />
 	</head>
 	<body>
 		<header>
@@ -168,5 +166,126 @@
 				</div>
 			</div>
 		</section>
+		<!------Carousel-->
+		<!-- <section class="forcarousel" aria-label="Gallery">
+			<div class="container">
+				<h4>პროექტის პარტნიორები</h4>
+			</div>
+			<div class="carousel" aria-label="Gallery">
+				<ol class="carousel__viewport">
+					<li id="carousel__slide1" tabindex="0" class="carousel__slide">
+						<div class="carousel__snapper" style="display: flex;">
+							<div class="container" style="display: flex;justify-content: center;">
+								<div style="flex:1">
+								    <img src="./images/Tegeta logo geo.jpg">
+							    </div>
+								<div style="flex:1">
+								    <img src="./images/spectre.jpg">
+							    </div>
+								<div style="flex:1">
+								    <img src="./images/lizingi.jpg">
+							    </div>
+							</div>
+							
+							<a href="#carousel__slide4" class="carousel__prev"
+								>Go to last slide</a
+							>
+							<a href="#carousel__slide2" class="carousel__next"
+								>Go to next slide</a
+							>
+						</div>
+					</li>
+					<li id="carousel__slide2" tabindex="0" class="carousel__slide">
+						<div class="carousel__snapper" style="display: flex;">
+							<div class="container" style="display: flex;justify-content: center;">
+								<div style="flex:1">
+								    <img src="./images/spectre.jpg">
+							    </div>
+								<div style="flex:1">
+								    <img src="./images/Tegeta logo geo.jpg">
+							    </div>
+								
+								<div style="flex:1">
+								    <img src="./images/lizingi.jpg">
+							    </div>
+							</div>
+						<a href="#carousel__slide1" class="carousel__prev"
+							>Go to previous slide</a
+						>
+						<a href="#carousel__slide3" class="carousel__next"
+							>Go to next slide</a
+						>
+					</li>
+					<li id="carousel__slide3" tabindex="0" class="carousel__slide">
+						<div class="carousel__snapper"></div>
+						<a href="#carousel__slide2" class="carousel__prev"
+							>Go to previous slide</a
+						>
+						<a href="#carousel__slide4" class="carousel__next"
+							>Go to next slide</a
+						>
+					</li>
+				
+				</ol>
+				<aside class="carousel__navigation">
+					<ol class="carousel__navigation-list">
+						<li class="carousel__navigation-item">
+							<a href="#carousel__slide1" class="carousel__navigation-button"
+								>Go to slide 1</a
+							>
+						</li>
+						<li class="carousel__navigation-item">
+							<a href="#carousel__slide2" class="carousel__navigation-button"
+								>Go to slide 2</a
+							>
+						</li>
+						<li class="carousel__navigation-item">
+							<a href="#carousel__slide3" class="carousel__navigation-button"
+								>Go to slide 3</a
+							>
+						</li>
+						
+					</ol>
+				</aside>
+			</div>
+		</section> -->
+
+		<section class="myslider" style="margin-top: 60px">
+			<div class="container">
+				<h4>პროექტის პარტნიორები</h4>
+			</div>
+			<div class="slideroutdiv">
+				<div class="sliderprev">
+					<img src="./images/before.svg" id="prev" />
+				</div>
+				<div
+					class="slider container"
+					style="display: flex; justify-content: center"
+				></div>
+				<div class="slidernext"><img src="./images/before.svg" /></div>
+			</div>
+			<br /><br /><br /><br />
+		</section>
+
+		<section class="faq">
+			<div class="container">
+				<div class="faqdiv">
+					<h4>ხშირად დასმული კითხვები</h4>
+					<div class="questions">
+						<div>როგორ ხდება კურსებზე რეგისტრაცია და შერჩევა?</div>
+						<div class="img"><img src="images/faq_arrow.svg" /></div>
+					</div>
+					<div class="questions">
+						<div>შემიძლია თუ არა ერთზე მეტ კურსზე რეგისტრაცია?</div>
+						<div class="img"><img src="images/faq_arrow.svg" /></div>
+					</div>
+					<div class="questions">
+						<div>რა ღირს სწავლა პროგრამის ფარგლებში?</div>
+						<div class="img"><img src="images/faq_arrow.svg" /></div>
+					</div>
+				</div>
+			</div>
+		</section>
 	</body>
 </html>
+<script type="text/javascript" src="./js/myslider.js"></script>
