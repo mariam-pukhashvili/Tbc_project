@@ -60,6 +60,7 @@ body {
 	margin: 0px;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 10px;
+	position: relative;
 }
 
 .container {
@@ -812,13 +813,14 @@ li {
 		}
 
 		.questions {
-			display: flex;
-			padding: 25px 0;
-			justify-content: space-between;
+			.question {
+				display: flex;
+				justify-content: space-between;
+			}
 
+			padding: 25px 0 0 0;
 			border-bottom: 1px solid rgb(53, 49, 49);
 			> div {
-				font: 18px / 1.2em 24px/1.6em "infofont";
 				font-family: "headerfont";
 				font-size: 18px;
 				color: $text_color;
@@ -827,6 +829,32 @@ li {
 				font-size: 18px;
 				color: $text_color;
 			}
+			.answer {
+				padding: 15px 0;
+				font-family: "headerfont";
+				font-size: 14px;
+				> p {
+					padding: 15px 0 0 0;
+				}
+				p {
+					line-height: 2;
+				}
+				// p {
+				// 	padding: 37px 0 37px 0;
+				// }
+				div {
+					padding: 37px 0;
+					margin-left: 1.5em !important;
+				}
+			}
 		}
 	}
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	/* Set the fixed height of the footer here */
+	height: 300px;
 }

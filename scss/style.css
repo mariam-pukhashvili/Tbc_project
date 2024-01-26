@@ -40,6 +40,7 @@ body {
   margin: 0px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 10px;
+  position: relative;
 }
 
 .container {
@@ -771,18 +772,20 @@ li {
 }
 
 .faq .faqdiv .questions {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 25px 0;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  padding: 25px 0 0 0;
   border-bottom: 1px solid #353131;
 }
 
+.faq .faqdiv .questions .question {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .faq .faqdiv .questions > div {
-  font: 18px / 1.2em 24px/1.6em "infofont";
   font-family: "headerfont";
   font-size: 18px;
   color: #f4f4f4;
@@ -791,5 +794,32 @@ li {
 .faq .faqdiv .questions .img {
   font-size: 18px;
   color: #f4f4f4;
+}
+
+.faq .faqdiv .questions .answer {
+  padding: 15px 0;
+  font-family: "headerfont";
+  font-size: 14px;
+}
+
+.faq .faqdiv .questions .answer > p {
+  padding: 15px 0 0 0;
+}
+
+.faq .faqdiv .questions .answer p {
+  line-height: 2;
+}
+
+.faq .faqdiv .questions .answer div {
+  padding: 37px 0;
+  margin-left: 1.5em !important;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 300px;
 }
 /*# sourceMappingURL=style.css.map */
