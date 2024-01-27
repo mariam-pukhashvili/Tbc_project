@@ -759,9 +759,45 @@ li {
   background: #f4f4f4;
 }
 
+@media only screen and (min-width: 961px) {
+  .container {
+    width: 90% !important;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .container {
     width: 90% !important;
+  }
+  .courses .wrapper {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+  }
+  .sliderprev,
+  .slidernext {
+    display: none !important;
+  }
+  .slideroutdiv {
+    margin-left: 0px;
+    height: 350px;
+  }
+  .slide-image {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .photocover .img_title {
+    margin: 50px 0 50px 0;
+  }
+  .photocover img {
+    height: 300px;
+  }
+  .info h1 span {
+    font-size: 16px;
+  }
+  .courses .wrapper .course {
+    width: 100%;
   }
 }
 /*# sourceMappingURL=style.css.map */

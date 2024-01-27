@@ -72,7 +72,7 @@ function selfparameters(i) {
 	//}, 500);
 }
 
-//self();
+self();
 
 let sliderprev = document.getElementById("prev");
 let slidernext = document.getElementById("next");
