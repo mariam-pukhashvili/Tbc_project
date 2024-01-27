@@ -5,10 +5,10 @@ questions.forEach((element) => {
 		let answer = this.nextElementSibling;
 		if (answer.style.display === "block") {
 			answer.style.display = "none";
-			this.querySelector(".img img").style.transform = "rotate(0deg)";
+			this.querySelector(".img img").style.transform = "rotate(90deg);";
 		} else {
 			answer.style.display = "block";
-			this.querySelector(".img img").style.transform = "rotate(180deg)";
+			this.querySelector(".img img").style.transform = "rotate(90deg);";
 		}
 	});
 });
