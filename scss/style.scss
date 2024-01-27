@@ -2,6 +2,7 @@ $container_width: 980px !important;
 $main_color: #2b2b2b;
 $dark_color: #161616;
 $text_color: rgb(244, 244, 244);
+$href_color: #0badef;
 
 @font-face {
 	font-display: block;
@@ -37,7 +38,7 @@ $text_color: rgb(244, 244, 244);
 
 @font-face {
 	font-display: block;
-	font-family: "more";
+	font-family: "hreffont";
 	src: url("https://static.wixstatic.com/ufonts/dd97f4_7737b5e7be24426aa35c9f4311c1de96/woff2/file.woff2")
 			format("woff2"),
 		url("https://static.wixstatic.com/ufonts/dd97f4_7737b5e7be24426aa35c9f4311c1de96/woff/file.woff")
@@ -76,6 +77,19 @@ header {
 	padding: 22px 0;
 	opacity: 0.96;
 	z-index: 999;
+}
+
+.href_class {
+	font-size: 20px;
+	line-height: 1.6em;
+	color: $href_color;
+	font: normal normal normal 20px/1.4em "hreffont";
+	display: block;
+
+	cursor: pointer;
+	&:hover {
+		color: rgb(170, 170, 170);
+	}
 }
 
 ul {
@@ -186,13 +200,8 @@ ul {
 	}
 
 	a {
-		font-size: 20px;
-		line-height: 1.6em;
-		color: #0badef;
-		font: normal normal normal 20px/1.4em "more";
-		display: block;
+		@extend .href_class;
 		margin-top: 43px;
-		cursor: pointer;
 	}
 }
 
@@ -804,21 +813,33 @@ li {
 	padding-top: 0px;
 	padding-bottom: 30px;
 	.faqdiv {
-		padding: 30px 40px;
-		h4 {
-			font-size: 24px;
-			color: $text_color;
-			padding: 34px 0px 67px calc((100% - 980px) * 0.5);
-			font: normal normal normal 24px/1.6em "infofont";
+		padding: 64px 40px;
+		.title {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			margin-bottom: 20px;
+
+			h4 {
+				font-size: 24px;
+				color: $text_color;
+
+				font: normal normal normal 24px/1.6em "infofont";
+			}
+			a {
+				@extend .href_class;
+			}
 		}
 
 		.questions {
 			.question {
 				display: flex;
 				justify-content: space-between;
+				padding: 25px 0;
+				cursor: pointer;
 			}
 
-			padding: 25px 0 0 0;
+			//
 			border-bottom: 1px solid rgb(53, 49, 49);
 			> div {
 				font-family: "headerfont";
@@ -833,6 +854,7 @@ li {
 				padding: 15px 0;
 				font-family: "headerfont";
 				font-size: 14px;
+				display: none;
 				> p {
 					padding: 15px 0 0 0;
 				}

@@ -19,7 +19,7 @@
 
 @font-face {
   font-display: block;
-  font-family: "more";
+  font-family: "hreffont";
   src: url("https://static.wixstatic.com/ufonts/dd97f4_7737b5e7be24426aa35c9f4311c1de96/woff2/file.woff2") format("woff2"), url("https://static.wixstatic.com/ufonts/dd97f4_7737b5e7be24426aa35c9f4311c1de96/woff/file.woff") format("woff"), url("https://static.wixstatic.com/ufonts/dd97f4_7737b5e7be24426aa35c9f4311c1de96/ttf/file.ttf") format("ttf");
 }
 
@@ -58,6 +58,19 @@ header {
   padding: 22px 0;
   opacity: 0.96;
   z-index: 999;
+}
+
+.href_class, .info a, .faq .faqdiv .title a {
+  font-size: 20px;
+  line-height: 1.6em;
+  color: #0badef;
+  font: normal normal normal 20px/1.4em "hreffont";
+  display: block;
+  cursor: pointer;
+}
+
+.href_class:hover, .info a:hover, .faq .faqdiv .title a:hover {
+  color: #aaaaaa;
 }
 
 ul {
@@ -189,13 +202,7 @@ ul {
 }
 
 .info a {
-  font-size: 20px;
-  line-height: 1.6em;
-  color: #0badef;
-  font: normal normal normal 20px/1.4em "more";
-  display: block;
   margin-top: 43px;
-  cursor: pointer;
 }
 
 .courses {
@@ -758,18 +765,29 @@ li {
 }
 
 .faq .faqdiv {
-  padding: 30px 40px;
+  padding: 64px 40px;
 }
 
-.faq .faqdiv h4 {
+.faq .faqdiv .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.faq .faqdiv .title h4 {
   font-size: 24px;
   color: #f4f4f4;
-  padding: 34px 0px 67px calc((100% - 980px) * 0.5);
   font: normal normal normal 24px/1.6em "infofont";
 }
 
 .faq .faqdiv .questions {
-  padding: 25px 0 0 0;
   border-bottom: 1px solid #353131;
 }
 
@@ -780,6 +798,8 @@ li {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  padding: 25px 0;
+  cursor: pointer;
 }
 
 .faq .faqdiv .questions > div {
@@ -797,6 +817,7 @@ li {
   padding: 15px 0;
   font-family: "headerfont";
   font-size: 14px;
+  display: none;
 }
 
 .faq .faqdiv .questions .answer > p {
