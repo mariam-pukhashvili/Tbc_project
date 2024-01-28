@@ -17,12 +17,13 @@
 
 _css/ # CSS, SCSS files_
 
-**style.css**
+- **style.css**
 
 _js/ # JavaScript files_
-**style.css**
-**style.css**
-**style.css**
+
+- **style.css**
+- **style.css**
+- **style.css**
 
 # Technologies Used
 
