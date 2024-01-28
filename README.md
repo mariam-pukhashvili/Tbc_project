@@ -1,6 +1,6 @@
 # Project structure
 
-├── Tbc_project
+<!-- ├── Tbc_project
 │ ├── css/ # CSS, SCSS files
 │ │ ├── style.css
 │ ├── js/ # JavaScript files
@@ -11,7 +11,12 @@
 │ │ ├── partners images
 │ │ └── courses images
 │ │ └── logo and footer images
-│ └── index.html # Main HTML file
+│ └── index.html # Main HTML file -->
+
+<sup>Tbc_project</sup>
+<sub>css/ # CSS, SCSS files</sub>
+
+**style.css**
 
 # Technologies Used
 
