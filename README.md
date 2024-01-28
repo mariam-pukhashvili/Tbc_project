@@ -21,9 +21,19 @@ _css/ # CSS, SCSS files_
 
 _js/ # JavaScript files_
 
-- **style.css**
-- **style.css**
-- **style.css**
+- **slider.js**
+- **nav.js**
+- **accordion.js**
+
+_images/ # Image assets_
+
+- **partners images**
+- **courses images**
+- **logo and footer images**
+
+## Main HTML file
+
+- **index.html**
 
 # Technologies Used
 
