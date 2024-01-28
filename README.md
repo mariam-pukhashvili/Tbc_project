@@ -31,7 +31,7 @@ _images/ # Image assets_
 - **courses images**
 - **logo and footer images**
 
-## Main HTML file
+**_Main HTML file_**
 
 - **index.html**
 
