@@ -51,7 +51,24 @@ $href_color: #0badef;
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	scrollbar-color: transparent transparent; /* thumb and track color */
+	scrollbar-width: 0px;
+	-ms-overflow-style: none;
 }
+
+*::-webkit-scrollbar {
+	width: 0;
+}
+
+*::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+	background: transparent;
+	border: none;
+}
+
 html,
 body {
 	min-height: 100%;
@@ -352,36 +369,6 @@ ul {
 			overflow-y: auto;
 		}
 	}
-}
-
-* {
-	box-sizing: border-box;
-	scrollbar-color: transparent transparent; /* thumb and track color */
-	scrollbar-width: 0px;
-}
-
-*::-webkit-scrollbar {
-	width: 0;
-}
-
-*::-webkit-scrollbar-track {
-	background: transparent;
-}
-
-*::-webkit-scrollbar-thumb {
-	background: transparent;
-	border: none;
-}
-
-* {
-	-ms-overflow-style: none;
-}
-
-ol,
-li {
-	list-style: none;
-	margin: 0;
-	padding: 0;
 }
 
 /*********my slider****************/

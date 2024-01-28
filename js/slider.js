@@ -1,88 +1,107 @@
-class ProjectsSlider {
-	constructor(projectsData, sourceNode) {
-		this._projectsData = projectsData;
-		this._sourceNode = sourceNode;
+const sliderData = [
+	{
+		img0: "./images/partners/img1.png",
+		img1: "./images/partners/img2.png",
+		img2: "./images/partners/img3.png",
+	},
+	{
+		img0: "./images/partners/img4.png",
+		img1: "./images/partners/img5.png",
+		img2: "./images/partners/img6.png",
+	},
+	{
+		img0: "./images/partners/img7.png",
+	},
+];
 
-		this._projectsNumber = projectsData.length;
-		this._selectedProject = 0;
-		this._shiftStep = 100 / this._projectsNumber;
-	}
+for (let i = 0; i < sliderData.length; i++) {
+	const slider = document.querySelector(".slider");
+	const { img0, img1, img2 } = sliderData[i];
 
-	get _markup() {
-		return `
-        <section class="slider">
-          <button class="slider__button slider__button--prev" type="button"></button>
-    
-          <div class="slider__outer-container">
-            <div class="slider__inner-container">
-  
-              ${this._projectsData
-								.map((itemData) => {
-									return `
-                  <div class="slider__item">
-                    <img src="https://picsum.photos/340/300?random=${itemData.id}">
-                  </div>`;
-								})
-								.join(``)}
-  
-            </div>
-          </div>
-    
-          <button class="slider__button slider__button--next" type="button"></button>
-        </section>`;
-	}
+	const slideData = `
+    <div class="slide ${i == 0 ? "visible" : ""}"  data-slide="slide-${i}">
+      <div class="slide-image container" style=" ${
+				Object.keys(sliderData[i]).length == 3
+					? "justify-content: space-between"
+					: "justify-content: center"
+			}" >
+      <div >${img0 ? "<img src=" + img0 + " />" : ""}"</div>
+      <div >${img1 ? "<img src=" + img1 + " />" : ""}"</div>
+      <div >${img2 ? "<img src=" + img2 + " />" : ""}"</div>
+      </div>
+      
+    </div>
+  `;
+	slider.innerHTML += slideData;
+}
 
-	get _node() {
-		const node = document.createElement(`template`);
-		node.innerHTML = this._markup;
+function self(i = "", direction = "") {
+	const slides = document.querySelectorAll(".slide");
+	let currentSlide = 0;
 
-		return node.content;
-	}
+	const slideInterval = setInterval(() => {
+		slides[currentSlide].classList.remove("visible");
+		currentSlide = (currentSlide + 1) % slides.length;
+		slides[currentSlide].classList.add("visible");
+	}, 5000);
 
-	_subscribe() {
-		const [prevButton, nextButton] =
-			this._slider.querySelectorAll(`.slider__button`);
-
-		prevButton.addEventListener(`click`, this._switchProject);
-		nextButton.addEventListener(`click`, this._switchProject);
-	}
-
-	_switchProject = (evt) => {
-		evt.preventDefault();
-
-		if (evt.target.classList.contains(`slider__button--next`)) {
-			if (this._selectedProject + 1 < this._projectsNumber) {
-				this._selectedProject++;
-				const currentShift = this._selectedProject * this._shiftStep;
-
-				this._projectsContainer.style.transform = `translateX(-${currentShift}%)`;
-			}
-
-			return;
+	//console.log(typeof i);
+	if (typeof i === "number") {
+		clearInterval(slideInterval);
+		slides[i].classList.remove("visible");
+		if (direction == "next") {
+			currentSlide = i == 2 ? 0 : i + 1;
+		} else {
+			currentSlide = i == 0 ? 2 : i - 1;
 		}
 
-		if (this._selectedProject - 1 >= 0) {
-			this._selectedProject--;
-			const currentShift = this._selectedProject * this._shiftStep;
-
-			this._projectsContainer.style.transform = `translateX(-${currentShift}%)`;
-		}
-
-		return;
-	};
-
-	render() {
-		this._slider = this._node;
-
-		this._projectsContainer = this._slider.querySelector(
-			`.slider__inner-container `
-		);
-		this._projectsContainer.style.width = `${100 * this._projectsNumber}%`;
-
-		this._subscribe();
-		this._sourceNode.append(this._slider);
+		slides[currentSlide].classList.add("visible");
 	}
 }
 
-const data = [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }];
-new ProjectsSlider(data, document.querySelector(`.root`)).render();
+function selfparameters(i) {
+	const slides = document.querySelectorAll(".slide");
+	let currentSlide = 0;
+	//const slideInterval = setInterval(() => {
+	slides[i].classList.remove("visible");
+
+	currentSlide = i == 2 ? 0 : i + 1;
+
+	slides[currentSlide].classList.add("visible");
+	//}, 500);
+}
+
+self();
+
+let sliderprev = document.getElementById("prev");
+let slidernext = document.getElementById("next");
+
+sliderprev.addEventListener(
+	"click",
+	function () {
+		changeslide("prev");
+	},
+	false
+);
+
+slidernext.addEventListener(
+	"click",
+	function () {
+		changeslide("next");
+	},
+	false
+);
+
+function changeslide(direction) {
+	var attribute = document.getElementsByClassName("slide visible");
+	const activeslides = document.querySelectorAll(".visible");
+	var c = 0;
+	for (var i in activeslides) {
+		if (c == activeslides.length) break;
+		c++;
+		let activelide = activeslides[i].getAttribute("data-slide");
+		let splitstr = activelide.split("-");
+		//console.log(parseInt(splitstr[1]));
+		self(parseInt(splitstr[1]), direction);
+	}
+}
