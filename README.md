@@ -13,10 +13,15 @@
 │ │ └── logo and footer images
 │ └── index.html # Main HTML file -->
 
-# Tbc_project
+## Tbc_project
 
-## css/ # CSS, SCSS files
+_css/ # CSS, SCSS files_
 
+**style.css**
+
+_js/ # JavaScript files_
+**style.css**
+**style.css**
 **style.css**
 
 # Technologies Used
