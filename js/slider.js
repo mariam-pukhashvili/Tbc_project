@@ -35,12 +35,15 @@ for (let i = 0; i < sliderData.length; i++) {
 	slider.innerHTML += slideData;
 }
 
-function self(i = "", direction = "") {
+function gotoslide(i = "", direction = "") {
 	const slides = document.querySelectorAll(".slide");
 	let currentSlide = 0;
 
 	const slideInterval = setInterval(() => {
-		slides[currentSlide].classList.remove("visible");
+		slides.forEach((element) => {
+			element.classList.remove("visible");
+		});
+		//slides[currentSlide].classList.remove("visible");
 		currentSlide = (currentSlide + 1) % slides.length;
 		slides[currentSlide].classList.add("visible");
 	}, 5000);
@@ -48,30 +51,21 @@ function self(i = "", direction = "") {
 	//console.log(typeof i);
 	if (typeof i === "number") {
 		clearInterval(slideInterval);
-		slides[i].classList.remove("visible");
+		slides.forEach((element) => {
+			element.classList.remove("visible");
+		});
 		if (direction == "next") {
 			currentSlide = i == 2 ? 0 : i + 1;
-		} else {
+		} else if (direction == "prev") {
 			currentSlide = i == 0 ? 2 : i - 1;
+		} else {
+			currentSlide = i;
 		}
-
 		slides[currentSlide].classList.add("visible");
 	}
 }
 
-function selfparameters(i) {
-	const slides = document.querySelectorAll(".slide");
-	let currentSlide = 0;
-	//const slideInterval = setInterval(() => {
-	slides[i].classList.remove("visible");
-
-	currentSlide = i == 2 ? 0 : i + 1;
-
-	slides[currentSlide].classList.add("visible");
-	//}, 500);
-}
-
-self();
+gotoslide();
 
 let sliderprev = document.getElementById("prev");
 let slidernext = document.getElementById("next");
@@ -92,6 +86,16 @@ slidernext.addEventListener(
 	false
 );
 
+let navigation_buttons = document.querySelectorAll(
+	".carousel__navigation-button"
+);
+
+navigation_buttons.forEach((element) => {
+	element.addEventListener("click", function (event) {
+		gotoslide(parseInt(this.getAttribute("id")));
+	});
+});
+
 function changeslide(direction) {
 	var attribute = document.getElementsByClassName("slide visible");
 	const activeslides = document.querySelectorAll(".visible");
@@ -102,6 +106,6 @@ function changeslide(direction) {
 		let activelide = activeslides[i].getAttribute("data-slide");
 		let splitstr = activelide.split("-");
 		//console.log(parseInt(splitstr[1]));
-		self(parseInt(splitstr[1]), direction);
+		gotoslide(parseInt(splitstr[1]), direction);
 	}
 }

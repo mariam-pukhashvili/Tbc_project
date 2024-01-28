@@ -476,6 +476,33 @@ ul {
 			}
 		}
 
+		.carousel__navigation {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			text-align: center;
+			z-index: 99999;
+		}
+
+		.carousel__navigation-list,
+		.carousel__navigation-item {
+			display: inline-block;
+		}
+
+		.carousel__navigation-button {
+			display: inline-block;
+			width: 1rem;
+			height: 1rem;
+			background-color: $text_color;
+			background-clip: content-box;
+			border: 0.35rem solid transparent;
+			border-radius: 50%;
+			font-size: 0;
+			cursor: pointer;
+			transition: transform 0.1s;
+		}
+
 		.sliderprev {
 			height: 224px;
 			display: flex;
@@ -659,9 +686,41 @@ ul {
 		}
 	}
 }
-@media only screen and (max-width: 961px) {
+
+@media only screen and (max-width: 1024px) {
 	.container {
 		width: 90% !important;
+	}
+}
+@media only screen and (max-width: 992px) {
+	.photocover .img_title {
+		margin: 20px 15px 50px 15px;
+	}
+}
+
+@media only screen and (max-width: 961px) {
+	// body {
+	// 	overflow-x: auto;
+	// 	overflow-y: scroll;
+
+	// 	position: relative;
+	// 	height: 100%;
+	// 	width: 100%;
+	// 	overflow: auto;
+	// }
+	.container {
+		width: 90% !important;
+	}
+	.photocover .img_title {
+		margin: 20px 15px 50px 15px;
+	}
+	.courses {
+		.wrapper {
+			grid-template-columns: repeat(1, 2fr);
+		}
+	}
+	.slide-image {
+		flex-direction: column;
 	}
 }
 @media only screen and (max-width: 600px) {
