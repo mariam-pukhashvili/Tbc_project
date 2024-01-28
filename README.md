@@ -22,7 +22,6 @@
 # Clone this repository
 
 git clone https://github.com/mariam-pukhashvili/Tbc_project.git
-cd papermark
 
 # Run the app
 
