@@ -47,7 +47,6 @@ function self(i = "", direction = "") {
 
 	//console.log(typeof i);
 	if (typeof i === "number") {
-		console.log(i);
 		clearInterval(slideInterval);
 		slides[i].classList.remove("visible");
 		if (direction == "next") {
