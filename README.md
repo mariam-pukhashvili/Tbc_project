@@ -13,8 +13,9 @@
 │ │ └── logo and footer images
 │ └── index.html # Main HTML file -->
 
-<sup>Tbc_project</sup>
-<sub>css/ # CSS, SCSS files</sub>
+# Tbc_project
+
+## css/ # CSS, SCSS files
 
 **style.css**
 
